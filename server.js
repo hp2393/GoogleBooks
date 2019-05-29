@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 
 const mongoose = require("mongoose");
@@ -18,7 +20,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',
+  process.env.MONGODB_URI,
   {
     useCreateIndex: true,
     useNewUrlParser: true
